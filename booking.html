@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Page Banner -->
+    <header class="booking-banner">
+        <h1>Book Your Adventure</h1>
+        <p>Plan your next unforgettable journey with us.</p>
+    </header>
+
+    <main class="booking-layout">
+
+        <!-- Booking Form -->
+        <section class="booking-form-section">
+            <h2>Plan Your Trip</h2>
+            <p class="form-instruction">
+                Fill in the form below to request your trip.
+                Fields marked with * are required.
+            </p>
+
+            <form action="#" method="post">
+
+                <!-- Your Details -->
+                <fieldset>
+                    <legend>Your Details</legend>
+
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input
+                            type="text"
+                            id="full-name"
+                            name="full_name"
+                            placeholder="Enter your full name"
+                            minlength="2"
+                            maxlength="80"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            maxlength="100"
+                            autocomplete="email"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone">Telephone Number *</label>
+                        <input
+                            type="tel"
+                            id="telephone"
+                            name="telephone"
+                            placeholder="+254712345678"
+                            pattern="[+]?[0-9 ]{9,15}"
+                            title="Enter 9 to 15 digits, optionally starting with +. Spaces are allowed."
+                            autocomplete="tel"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country of Residence *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select your country</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Tanzania">Tanzania</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Trip Details -->
+                <fieldset>
+                    <legend>Trip Details</legend>
+
+                    <div class="form-group">
+                        <label for="destination">Destination or Package *</label>
+                        <select id="destination" name="destination" required>
+                            <option value="">Choose a destination</option>
+
+                            <optgroup label="Wildlife Safaris">
+                                <option value="Maasai Mara">Maasai Mara</option>
+                                <option value="Amboseli">Amboseli National Park</option>
+                                <option value="Lake Nakuru">Lake Nakuru</option>
+                                <option value="Tsavo">Tsavo National Parks</option>
+                            </optgroup>
+
+                            <optgroup label="Nature and Beach">
+                                <option value="Diani Beach">Diani Beach</option>
+                                <option value="Mount Kenya">Mount Kenya</option>
+                            </optgroup>
+
+                            <option value="Custom Package">Custom Package</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="start-date">Preferred Start Date *</label>
+                        <input
+                            type="date"
+                            id="start-date"
+                            name="start_date"
+                            min="2026-10-28"
+                            required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adults">Number of Adults *</label>
+                            <input
+                                type="number"
+                                id="adults"
+                                name="adults"
+                                min="1"
+                                max="30"
+                                value="2"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="children">Number of Children</label>
+                            <input
+                                type="number"
+                                id="children"
+                                name="children"
+                                min="0"
+                                max="20"
+                                value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Trip Length *</label>
+                        <select id="duration" name="duration" required>
+                            <option value="">Choose trip length</option>
+                            <option value="1 day">1 day</option>
+                            <option value="2-3 days">2–3 days</option>
+                            <option value="4-7 days">4–7 days</option>
+                            <option value="8-14 days">8–14 days</option>
+                            <option value="15+ days">15+ days</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Preferences -->
+                <fieldset>
+                    <legend>Your Preferences</legend>
+
+                    <p class="field-heading">Accommodation Type *</p>
+
+                    <div class="choice-group">
+                        <label>
+                            <input type="radio" name="accommodation"
+                                   value="Camping" required>
+                            Camping
+                        </label>
+
+                        <label>
+                            <input type="radio" name="accommodation"
+                                   value="Lodge">
+                            Lodge
+                        </label>
+
+                        <label>
+                            <input type="radio" name="accommodation"
+                                   value="Hotel">
+                            Hotel
+                        </label>
+
+                        <label>
+                            <input type="radio" name="accommodation"
+                                   value="Luxury">
+                            Luxury
+                        </label>
+                    </div>
+
+                    <p class="field-heading">Interests (select all that apply)</p>
+
+                    <div class="choice-group">
+                        <label>
+                            <input type="checkbox" name="interests[]"
+                                   value="Safari">
+                            Safari
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="interests[]"
+                                   value="Beach">
+                            Beach
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="interests[]"
+                                   value="Hiking">
+                            Hiking
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="interests[]"
+                                   value="Culture">
+                            Culture
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="interests[]"
+                                   value="Photography">
+                            Photography
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget per Person (KES) *</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">Select your budget</option>
+                            <option value="Below 15000">Below KES 15,000</option>
+                            <option value="15000-30000">KES 15,000–30,000</option>
+                            <option value="30000-60000">KES 30,000–60,000</option>
+                            <option value="60000-100000">KES 60,000–100,000</option>
+                            <option value="Above 100000">Above KES 100,000</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Extra Requests -->
+                <fieldset>
+                    <legend>Extra Requests</legend>
+
+                    <div class="form-group">
+                        <label for="requests">Special Requests (optional)</label>
+                        <textarea
+                            id="requests"
+                            name="requests"
+                            rows="5"
+                            minlength="5"
+                            maxlength="1000"
+                            placeholder="Tell us about any special requirements..."></textarea>
+                    </div>
+
+                    <div class="form-group terms-group">
+                        <label>
+                            <input type="checkbox" name="terms"
+                                   value="accepted" required>
+                            I agree to the booking terms and privacy policy. *
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Form Buttons -->
+                <div class="form-buttons">
+                    <button type="submit" class="submit-button">
+                        Submit Booking Request
+                    </button>
+
+                    <button type="reset" class="reset-button">
+                        Reset Form
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Side Panel -->
+        <aside class="booking-sidebar">
+            <h2>How Booking Works</h2>
+
+            <ol>
+                <li>
+                    <strong>Submit your request</strong>
+                    <p>Fill in your details and select your preferred trip.</p>
+                </li>
+
+                <li>
+                    <strong>We review your request</strong>
+                    <p>Our team checks your travel dates and preferences.</p>
+                </li>
+
+                <li>
+                    <strong>Receive confirmation</strong>
+                    <p>We contact you to discuss availability and the final price.</p>
+                </li>
+
+                <li>
+                    <strong>Prepare for your adventure</strong>
+                    <p>Once arrangements are confirmed, get ready for your trip.</p>
+                </li>
+            </ol>
+
+            <div class="sidebar-note">
+                <h3>Need Help?</h3>
+                <p>Include your questions in the special requests box so our team can assist you.</p>
+            </div>
+        </aside>
+
+    </main>
+
+    
+</body>
+</html>
